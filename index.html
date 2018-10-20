@@ -3,54 +3,76 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Rock Paper Scissors Part 2
+  <title>Psychic Game
   </title>
 </head>
 
 <body>
 
-  <div id="game">
+
+<div id ="word">
+</div>
+
+<div id="guesses">
+Guesses left:
+  </div>
+
+  <div id="lettersUsed">
+Letters used:
 
   </div>
+
+
 
   <script type="text/javascript">
 
     // Creates an array that lists out all of the options (10 potential words).
-    var wordChoices = ["pizza", "beach","television","telephone","pyramid","canada","computer",];
+    var wordChoices = ["pizza", "beach","television","telephone","pyramid","canada","computer","mechanic","bridge","baseball"];
+    var letters=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    var usedLetters=[];
+    var guessesLeft=10;
+// This function is run whenever the user presses a key.
+document.onkeyup = function(event) {
 
-    // This function is run whenever the user presses a key.
-    document.onkeyup = function(event) {
+  var userGuess = event.key;
+  var e1 = document.getElementById('word');
 
-      // Determines which key was pressed.
-      var userGuess = event.key;
+    //selects a random word from wordChoices string
+    var randomChoice = wordChoices[Math.floor(Math.random() * wordChoices.length)];
+var randomChoiceArray = randomChoice.split();
 
-      // Randomly chooses a choice from the options array. This is the Computer's guess.
-      var wordChoices = wordChoices[Math.floor(Math.random() * wordChoices.length)];
+alert("User guess: " + userGuess);
+    //var userGuessCheck=randomChoiceArray.indexOf(userGuess);
 
-      // Alerts the key the user pressed (userGuess).
-      alert("User guess: " + userGuess);
 
-      // Alerts the Computer's guess.
-      alert("Computer guess: " + computerGuess);
 
-      var userID=computerChoices.indexOf(userGuess);
-      
-      var compID=computerChoices.indexOf(computerGuess);
+var i;
+for (i = 0; i < cars.length; i++) { 
+    text += cars[i] + "<br>";
+}
 
-        if (userID === -1) {
+
+if (userGuessCheck = randomChoiceArray.indexOf(userGuess)) {
         alert("You didn't enter a valid input");
+        guessesLeft--;
       }
-        else if ((userID - compID === -1) || (userID - compID === 2)) {
+        else if  (userID =randomChoiceArray.indexOf(userGuess)) {
+          var removed = randomChoiceArray.splice.indexOf(userGuess);
           alert("You have won!");
       }
-        else if(userID === compID){
-          alert("Draw!");
-      }
+
+
+
+
+        
         else{
           alert("You lose!");
       }
 
     };
+
+      
+
   </script>
 
 </body>
