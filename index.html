@@ -9,67 +9,57 @@
 
 <body>
 
+<div id="container">
+<div id="header">
+<p>
+  You have <span id="guesses">10</span> guesses left.
 
+</p>
+<h1 id="underscores"></h1>
 <div id ="word">
 </div>
 
-<div id="guesses">
-Guesses left:
-  </div>
-
-  <div id="lettersUsed">
-Letters used:
-
-  </div>
 
 
+</div>
+</div>
 
   <script type="text/javascript">
 
     // Creates an array that lists out all of the options (10 potential words).
-    var wordChoices = ["pizza", "beach","television","telephone","pyramid","canada","computer","mechanic","bridge","baseball"];
+    var wordChoices = ["pizza", "pizzas"];
     var letters=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
     var usedLetters=[];
     var guessesLeft=10;
+    var randomChoice = wordChoices[Math.floor(Math.random() * wordChoices.length)];
+var randomChoiceArray = randomChoice.split("");
+
+
+
+  for (var i = 0; i < randomChoiceArray.length; i++) {
+    console.log("_ ");
+  }
+    
+
 // This function is run whenever the user presses a key.
 document.onkeyup = function(event) {
-
-  var userGuess = event.key;
-  var e1 = document.getElementById('word');
-
-    //selects a random word from wordChoices string
-    var randomChoice = wordChoices[Math.floor(Math.random() * wordChoices.length)];
-var randomChoiceArray = randomChoice.split();
-
-alert("User guess: " + userGuess);
-    //var userGuessCheck=randomChoiceArray.indexOf(userGuess);
-
-
-
-var i;
-for (i = 0; i < cars.length; i++) { 
-    text += cars[i] + "<br>";
-}
+  var userGuess = event.key.toLowerCase();
+  
+  for (var i = 0; i < randomChoiceArray.length; i++) {
+                
+                if(randomChoiceArray[i] === userGuess) {
+                    console.log("Correct guess");
+                }
+                else {
+                    console.log("incorrect");
+                }
+          
 
 
-if (userGuessCheck = randomChoiceArray.indexOf(userGuess)) {
-        alert("You didn't enter a valid input");
-        guessesLeft--;
-      }
-        else if  (userID =randomChoiceArray.indexOf(userGuess)) {
-          var removed = randomChoiceArray.splice.indexOf(userGuess);
-          alert("You have won!");
-      }
+              }}
 
+    
 
-
-
-        
-        else{
-          alert("You lose!");
-      }
-
-    };
 
       
 
