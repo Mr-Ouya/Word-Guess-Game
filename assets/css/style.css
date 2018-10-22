@@ -1,0 +1,18 @@
+#header {
+    width: mx-auto;
+    position:relative;
+    max-width: 960px;
+    margin: 0 auto;
+    clear: both;
+  }
+  #central-pic {
+position:absolute;
+float:left;
+border-left:50%;
+  }
+  #central-display {
+    position:absolute;
+    float:left;
+    border-left:50%;
+    padding-top:20px;
+  }

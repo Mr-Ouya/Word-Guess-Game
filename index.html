@@ -3,21 +3,26 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Psychic Game
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <title>Word Guess Game
   </title>
 </head>
 
 <body>
-
-<div id="container">
 <div id="header">
+  <h1>Junk Food Guessing Game</h1>
+<div id="central-pic"><img src="./assets/images/JOEY.jpg"></div>
+</div>
+<div id="container">
+<div id=centralDisplay>
 <p>
   You have <span id="guesses">10</span> guesses left.
   Letters Guessed:<span id="lettersGuessedDisplay"></span>
+  Mystery Word:<span id="mysteryWord"></span>
 </p>
 <h1 id="underscores"></h1>
 <div id ="word">
-</div>
+  </div>
 
 
 
@@ -27,19 +32,24 @@
   <script type="text/javascript">
 
     // Creates an array that lists out all of the options (10 potential words).
-    var wordChoices = ["pizza", "pizzas"];
+    var wordChoices = ["pizza", "skittles"];
     var letters=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
     var usedLetters=[];
     var guessesLeft=10;
     var randomChoice = wordChoices[Math.floor(Math.random() * wordChoices.length)];
 var randomChoiceArray = randomChoice.split("");
+var shownLetters=[];
 
 
-
+window.onload = function () {
+            
+        
   for (var i = 0; i < randomChoiceArray.length; i++) {
-    console.log("_ ");
-  }
+    shownLetters.push(" _ ");
     
+    lettersGuessedDisplay.innerHTML=shownLetters;
+  }}
+  
 
 // This function is run whenever the user presses a key.
 document.onkeyup = function(event) {
@@ -70,12 +80,12 @@ document.onkeyup = function(event) {
                 };
               
                 if(randomChoiceArray.length === letters.length) {
-                var win = confirm("YOU WIN!");
+                var win = confirm("You have won!");
                 if(win == true) {
                     setup();
                     guessesLeft = 10;
                     document.getElementById("guesses").innerHTML = guessesLeft;
-                }}};
+                }}}}
               
 
       
