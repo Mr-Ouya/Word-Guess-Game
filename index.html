@@ -50,20 +50,33 @@ document.onkeyup = function(event) {
   for (var i = 0; i < randomChoiceArray.length; i++) {
                 
                 if(randomChoiceArray[i] === userGuess) {
-                    usedLetters.push(userGuess);
+                    
                     console.log("Correct guess");
-                    lettersGuessedDisplay.innerHTML += userGuess;
+                    
                 }
-                else {
-                  usedLetters.push(userGuess);
-                    console.log("incorrect");
+               
+              
+              
+              for (var i = 0; i < letters.length; i++) {
+                if(letters[i] === userGuess) {
+                    usedLetters.push(userGuess);
+                    letters.splice(i, 1);
                     lettersGuessedDisplay.innerHTML += userGuess;
-                }
-          
-
-
-              }}
-           
+                }};
+              
+              if(letters[i] !== userKey) {
+                    guessesLeft--;
+                    document.getElementById("guesses").innerHTML = guessesLeft;
+                };
+              
+                if(randomChoiceArray.length === letters.length) {
+                var win = confirm("YOU WIN!");
+                if(win == true) {
+                    setup();
+                    guessesLeft = 10;
+                    document.getElementById("guesses").innerHTML = guessesLeft;
+                }}};
+              
 
       
 
