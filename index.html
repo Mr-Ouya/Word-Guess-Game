@@ -13,7 +13,7 @@
 <div id="header">
 <p>
   You have <span id="guesses">10</span> guesses left.
-
+  Letters Guessed:<span id="lettersGuessedDisplay"></span>
 </p>
 <h1 id="underscores"></h1>
 <div id ="word">
@@ -45,21 +45,25 @@ var randomChoiceArray = randomChoice.split("");
 document.onkeyup = function(event) {
   var userGuess = event.key.toLowerCase();
   
+
+
   for (var i = 0; i < randomChoiceArray.length; i++) {
                 
                 if(randomChoiceArray[i] === userGuess) {
+                    usedLetters.push(userGuess);
                     console.log("Correct guess");
+                    lettersGuessedDisplay.innerHTML += userGuess;
                 }
                 else {
+                  usedLetters.push(userGuess);
                     console.log("incorrect");
+                    lettersGuessedDisplay.innerHTML += userGuess;
                 }
           
 
 
               }}
-
-    
-
+           
 
       
 
