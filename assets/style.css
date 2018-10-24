@@ -1,0 +1,40 @@
+.junkPic {
+    width: 50%;
+    height: auto;
+    border-radius:50%;
+}
+.header {
+    height: 225px;
+}
+.leftContainer {
+    float: left;
+}
+.rightContainer {
+    float: left;
+    font-family: Impact, Charcoal, sans-serif;
+    padding: 5%;
+}
+
+
+
+#answer-display {
+    text-align: center;
+    font-size: 24pt;
+}
+#user-guesses {
+    text-align: justify;
+    font-size: 16pt;
+}
+.wordGuess {
+    text-align: left;
+    font-size: 15pt;
+}
+.topContent {
+    text-align: justify;
+}
+.card {
+    position: absolute;
+    font-family: 'Comic ';
+    margin: 5%;
+    font-size: 16pt;
+}
