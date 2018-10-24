@@ -165,7 +165,10 @@
         
        
         document.addEventListener("keyup", function (event) {
-            checkLetter(event);
+            if (event.keyCode >= 65 && event.keyCode <= 90){
+                checkLetter(event);
+            }
+            
         }
         );
     </script>
